@@ -1,9 +1,9 @@
 import React from 'react'
 
-const TodoItem = ({todo}) => {
+const TodoItem = ({todo, number}) => {
   return (
     <div className='todo__item'>
-        <h2>{todo.id}. {todo.title}</h2>
+        <h2>{number}. {todo.title}</h2>
         <button>
             Выполнил
         </button>
