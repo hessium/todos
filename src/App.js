@@ -1,26 +1,36 @@
 import './App.css';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import TodoList from './components/TodoList';
-import TodoItem from './components/TodoItem';
 import TodoForm from './components/TodoForm';
+
 function App() {
+ 
 
-  const [todos, setTodos] = useState([ 
-    { id : '1', title : 'купить хлеб', completed : false},
-    { id : '2', title : 'купить чай', completed : false},
-    { id : '3', title : 'купить сыр', completed : false}
-  ])
+  const [todos, setTodos] = useState(() => {
+    const saved = localStorage.getItem("todos");
+    const initialValue = JSON.parse(saved);
+    return initialValue || [];
+  });
 
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos))
+    }, [todos])
+    
+  
   const createTodo = (newTodo) => {
     setTodos([...todos, newTodo])
   }
 
   const removeTodo = (todo) => {
-      setTodos(todos.filter(p => p.id !== todo.id))
+    setTodos(todos.filter(p => p.id !== todo.id))
   }
 
-  const completedTodo = () => {
-
+  const completedTodo = (todo) => {
+    setTodos(todos => {
+      return todos.map(item => {
+        return item.id === todo.id ? { ...item, completed: item.completed === true ? false : true } : item
+      })
+    })
   }
 
   return (
@@ -40,7 +50,7 @@ function App() {
           Выполненые
         </button>
       </div>
-      <TodoList remove={removeTodo} todos={todos}/>
+      <TodoList completed={completedTodo} remove={removeTodo} todos={todos}/>
     </div>
   );
 }
