@@ -1,10 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react';
 
-const TodoForm = ({}) => {
+
+const TodoForm = ({create}) => {
+
+  const [quest, setQuest] = useState({ title: '' });
+
     const addNewTodo = (e) => {
         e.preventDefault();
-        
-        setTodos([...todos, {...quest, id: Date.now}]);
+        const newTodo = {
+          ...quest, id: Date.now(), completed : false
+        }
+        create(newTodo);
         setQuest({ title: '' });
       }
   return (

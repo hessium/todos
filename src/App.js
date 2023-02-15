@@ -11,18 +11,36 @@ function App() {
     { id : '3', title : 'купить сыр', completed : false}
   ])
 
-  const [quest, setQuest] = useState({ title: '' });
+  const createTodo = (newTodo) => {
+    setTodos([...todos, newTodo])
+  }
 
+  const removeTodo = (todo) => {
+      setTodos(todos.filter(p => p.id !== todo.id))
+  }
 
- 
+  const completedTodo = () => {
+
+  }
 
   return (
     <div className="App">
       <header className="App-header">
         Todo
       </header>
-     <TodoForm />
-      <TodoList todos={todos}/>
+      <TodoForm  create={createTodo}/>
+      <div className='wrapper'>
+        <button>
+          Все todo
+        </button>
+        <button>
+          Активные
+        </button>
+        <button>
+          Выполненые
+        </button>
+      </div>
+      <TodoList remove={removeTodo} todos={todos}/>
     </div>
   );
 }

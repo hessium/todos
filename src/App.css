@@ -17,13 +17,21 @@
   width: 400px;
   justify-content: space-between;
 }
-
+.wrapper {
+  max-width: 400px;
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
 form {
   display: flex;
   align-items: center;
   justify-content: space-between;
   max-width: 400px;
   width: 400px;
+  margin-bottom: 20px;
 }
 
 button {
