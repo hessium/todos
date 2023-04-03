@@ -37,7 +37,7 @@ button {
   border: 1px solid rgba(0, 119, 129, 0.15);
   font-size: 14px;
   font-weight: 600;
-  color: azure;
+  color: azure;font-size: 18px;
 }
 
 input {
