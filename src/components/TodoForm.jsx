@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 
 
 const TodoForm = ({create}) => {
-
   const [quest, setQuest] = useState({ title: '' });
 
     const addNewTodo = (e) => {

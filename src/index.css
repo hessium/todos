@@ -1,0 +1,66 @@
+html, body {   
+    word-break: normal;
+    overflow-x: hidden;
+}
+body {
+    background:  rgba(0, 171, 185, 1);
+    height: 100%;
+    width: 100%;
+    background: linear-gradient( #00ABB9 );
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smothing: grayscale;
+    position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  font-weight: normal;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  
+}
+li {
+    list-style: none;
+  }
+p {
+  padding: 0;
+  margin: 0;
+}
+
+footer {
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height:auto;
+  display: block;
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+}
