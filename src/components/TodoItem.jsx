@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { IconContext } from "react-icons";
-import { TiDeleteOutline } from 'react-icons/ti';
+import { RiDeleteBin2Line } from 'react-icons/ri';
 
 const TodoItem = ({ todo, remove, completed, edit }) => {
   const [isEditing, setEditing] = useState(false);
@@ -68,8 +68,8 @@ const TodoItem = ({ todo, remove, completed, edit }) => {
           className="btn btn__danger"
           onClick={() => remove(todo)}
         >
-          <IconContext.Provider value={{ size: "40px" }}>
-              <TiDeleteOutline   />
+        <IconContext.Provider value={{ size: "33px" }}>
+          <RiDeleteBin2Line/>
         </IconContext.Provider>
         </button>
       </div>
