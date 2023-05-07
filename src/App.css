@@ -75,6 +75,7 @@ li {
   border-radius: 30px;
   max-width: 645px;
   width: 100%;
+  border: none;
 }
 
 .todo-list {
